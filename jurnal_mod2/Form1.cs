@@ -16,6 +16,8 @@ namespace jurnal_mod2
         {
             InitializeComponent();
         }
+        float number, answer;
+        int sum;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,10 +36,15 @@ namespace jurnal_mod2
 
         private void button10_Click(object sender, EventArgs e)
         {
+            number = float.Parse(textBox1.Text);
+            textBox1.Clear();
+            textBox1.Focus();
+            sum = 2;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+            compute(sum);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -87,6 +94,13 @@ namespace jurnal_mod2
 
         public void compute(int sum)
         {
+            switch (sum)
+            {
+                case 2:
+                    answer = number + float.Parse(textBox1.Text);
+                    textBox1.Text = answer.ToString();
+                    break;
+            }
         }
     }
 }
